@@ -50,7 +50,48 @@ print(f"leads: {lead_thismonth} open leads are {open_leads} what is conversion r
 """A float is a number with a decimal point. Used for money, percentages, and rates.
 Any number that needs precision — money values, percentages, conversion rates, ratios — is a float. Python automatically uses float when you type a decimal. The word "float" comes from "floating point" — referring to the decimal point that can appear anywhere in the number.
 GTM examples: Monthly Recurring Revenue (£8,500.00), conversion rate (0.23 = 23%), CAC/LTV ratio (3.5), average deal value (£12,400.75). Anything financial is usually a float."""
+mrr = 8500.00
+conversion_rate = 0.23
+avg_deal_value = 12400.75
+ltv_cac_ratio = 3.5 # LTV:CAC — healthy is above 3; Float arithmetic — THE core GTM calculation
+arr = mrr * 12
+print(f"MRR: £{mrr}") 
+print(f"ARR: £{arr}")
+messy_result = 102000.000000001
+clean_result = round(arr, 2)
+print(f"Clean ARR: £{clean_result}")
 
+#booleans
+"""A boolean holds exactly one of two values: True or False. Capital T and F.
+Booleans are on/off switches. They answer yes/no questions. In Python they must be capitalised: True and False. They're the result of any comparison — "is this lead's score above 70?" returns True or False. This is how Python makes decisions.
+GTM examples: is_enterprise (True/False), is_gdpr_compliant (True/False), has_been_contacted (True/False), is_duplicate (True/False). Boolean fields are common in CRMs and in data quality checks."""
+is_enterprise = True 
+has_been_contacted = False 
+is_gdpr_compliant = True 
+is_duplicate = False
+lead_score = 85 
+is_hot_lead = lead_score > 70
+is_cold_lead = lead_score < 30
+print(is_hot_lead)
+print(is_cold_lead)
+mrr = 8500 
+healthy_arr = (mrr * 12) > 50000
+print(f"Is ARR healthy? {healthy_arr}")
+
+#input() — Accept Data from the User
+"""input() pauses the script and waits for the user to type something. Always returns a string.
+input() lets you build interactive scripts — instead of hardcoding values, the user can type them in when the script runs. Critical rule: input() ALWAYS returns a string, no matter what the user types. If they type 8500, Python receives the string "8500" not the number 8500. You must convert it.
+GTM use case: A quick interactive calculator you run at the start of a sales meeting: "Enter this month's MRR" → script calculates ARR, pipeline coverage, CAC payback live. This is exactly what you'll build today."""
+company_name = input("Enter company name: ")
+print(f"Company: {company_name}")
+mrr_input = input("Enter MRR (£): ")
+mrr = float(mrr_input)
+arr = mrr * 12 
+print(f"Your ARR is: £{arr:,.2f}")
+mrr = float(input("Enter MRR (£): "))
+
+#Putting It Together — The ARR Calculator Script
+"""A GTM revenue calculator using every concept from today."""
 
 
 
