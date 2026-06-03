@@ -105,7 +105,17 @@ cac_payback_mo = cac/mrr
 is_arr_healthy = arr>100000
 is_ltv_cac_good = ltv_cac_ratio>=3
 is_churn_low = Monthly_churn<0.03
-
+print() 
+print("=" * 45) 
+print(f" GTM REVENUE REPORT — {company_name.upper()}")
+print(f"CAC: £{cac:>10,.2f}")
+print(f" LTV:CAC Ratio: {ltv_cac_ratio:>10.1f}x")
+print(f" CAC Payback: {cac_payback_mo:>9.1f} months") 
+print("=" * 45) 
+print(f" ARR Healthy (>£100k)? {is_arr_healthy}") 
+print(f" LTV:CAC Good (>=3x)? {is_ltv_cac_good}") 
+print(f" Churn Low (<3%/mo)? {is_churn_low}") 
+print("=" * 45)
 
 
 
