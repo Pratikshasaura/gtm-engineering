@@ -92,6 +92,19 @@ mrr = float(input("Enter MRR (£): "))
 
 #Putting It Together — The ARR Calculator Script
 """A GTM revenue calculator using every concept from today."""
+company_name = input("Enter company name: ")
+rep_name = input("entre sales rep name: ")
+mrr= float(input("entre Monthly recurring revenue($): "))
+Monthly_churn = float(input("Enter monthly churn: "))
+cac = float(input("entre monthly cac: "))
+arr=mrr*12
+net_mrr = mrr*(1-Monthly_churn)
+ltv = (mrr/Monthly_churn)
+ltv_cac_ratio= ltv/cac
+cac_payback_mo = cac/mrr
+is_arr_healthy = arr>100000
+is_ltv_cac_good = ltv_cac_ratio>=3
+is_churn_low = Monthly_churn<0.03
 
 
 
