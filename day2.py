@@ -42,3 +42,63 @@ print(sorted(companies))
 Nested Structure
 A list can contain other lists. This is how CSV rows work — a table is a list of rows, each row is a list.
 Real GTM data is rarely a flat list of single values. A CSV file becomes a list of rows, where each row is itself a list of column values. Understanding this structure is the bridge from "toy examples" to real data work. Tomorrow (Day 3) you'll upgrade this to a list of dictionaries, which is how APIs actually return data."""
+leads = [ ["alice@techcorp.com", 85, "MQL"], ["bob@startup.io", 42, "Lead"], ["carol@enterprise.co.uk", 91, "SQL"], ["dave@scaleup.com", 67, "MQL"] ]
+print(f"Total leads: {len(leads)}")
+print(leads[0])
+print(leads[0][0])
+print(leads[0][1])
+print(leads[2][2])
+leads = [ ["alice@techcorp.com", 85, "MQL", True], ["bob@startup.io", 42, "Lead", False], ["carol@enterprise.co.uk", 91, "SQL", True], ["dave@scaleup.com", 67, "MQL", False], ["eve@bigco.com", 78, "MQL", True], ["frank@tiny.io", 31, "Lead", False], ] 
+unsubscribed = ["frank@tiny.io", "old@gone.com"]
+emails = []
+scores = []
+stages = []
+emails.append(leads[0][0]); 
+scores.append(leads[0][1]); 
+stages.append(leads[0][2]) 
+emails.append(leads[1][0]); 
+scores.append(leads[1][1]); 
+stages.append(leads[1][2]) 
+emails.append(leads[2][0]); 
+scores.append(leads[2][1]); 
+stages.append(leads[2][2]) 
+emails.append(leads[3][0]); 
+scores.append(leads[3][1]); 
+stages.append(leads[3][2]) 
+emails.append(leads[4][0]); 
+scores.append(leads[4][1]); 
+stages.append(leads[4][2]) 
+emails.append(leads[5][0]); 
+scores.append(leads[5][1]); 
+stages.append(leads[5][2])
+total_leads= len(leads) 
+top_lead_email= leads[0][0]
+last_lead_email= leads[-1][0]
+ranked_scores = sorted(scores, reverse=True)
+highest_score = ranked_scores[0]
+lowest_score = ranked_scores[-1]
+top3scores= ranked_scores[:3]
+avg_score = sum(scores) / len(scores)
+frank_unsub = "frank@tiny.io" in unsubscribed
+alice_unsub = "alice@techcorp.com" in unsubscribed
+print() 
+print("━" * 50) 
+print(" LEAD PROCESSOR REPORT") 
+print("━" * 50) 
+print(f" Total leads: {total_leads}") 
+print(f" Highest score: {highest_score}") 
+print(f" Lowest score: {lowest_score}") 
+print(f" Average score: {avg_score:.1f}") 
+print(f" Top 3 scores: {top3scores}") 
+print(f" First lead: {top_lead_email}") 
+print(f" Last lead: {last_lead_email}") 
+print("━" * 50) 
+print(" UNSUBSCRIBE CHECKS") 
+print(f" frank@tiny.io in unsub list? {frank_unsub}") 
+print(f" alice@techcorp.com in unsub? {alice_unsub}") 
+print("━" * 50) 
+print(" STAGES BREAKDOWN") 
+print(f" All stages: {stages}") 
+print(f" First 3 emails: {emails[:3]}") 
+print("━" * 50)
+
