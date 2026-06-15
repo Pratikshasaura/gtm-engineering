@@ -1,16 +1,28 @@
+#Suppression lead check
 from lead import leads
-entreprise_leads = []
-for lead in leads:
-    if lead["employees"] >= 500:
-        entreprise_leads.append(lead)
 
-print(entreprise_leads)
-
-
-count = 0
+unsubscribed = [
+    "alice@techcorp.com",
+    "bob@startup.io"
+]
+outreach_query = []
 
 for lead in leads:
-    if lead["gdpr_ok"]:
-        count += 1
+    if lead["email"] not in unsubscribed:
+        outreach_query.append(leads)
 
-print(count)
+from lead import leads
+
+unsubscribed = [
+    "alice@techcorp.com",
+    "bob@startup.io"
+]
+outreach_query = []
+for lead in leads:
+    if lead["email"] not in unsubscribed:
+        outreach_query.append(leads)
+
+
+
+
+
