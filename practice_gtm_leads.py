@@ -222,6 +222,90 @@ for lead in leads:
 
     #continue
     
+first_enterprise_lead = None
+if lead["score"]>=95 and lead["employees"]>=1000:
+    first_enterprise_lead.append(lead)
+    break
+
+#enumerate
+crm_records=[]
+for index, lead in enumerate(leads, start=1):
+    crm_records.append({
+        
+        "crm_id": f"GTM-{index:04d}",
+
+        "email": lead["email"]
+    })
+
+crm_updates = []
+for index, lead in enumerate(lead, start=1):
+    crm_updates.append({
+        "record_id": f"lead-{index:04d}",
+        "email": lead["email"]
+    })
+for index, lead in enumerate(lead, start=1):
+    crm_update.append({
+        "record_id": f"lead-{index:02d}",
+        "email":lead["email"]   })
+    
+#range
+campain=[]
+for i in range(1,4):
+    campain.append({
+        "campaign_name": f"Outbound Batch {i}"
+    })
+
+territories = []
+
+for i in range(1, 101):
+
+    territories.append({
+        "territory": f"TERR-{i:03d}"
+    })
+#List comprehensions
+
+emails = []
+
+for lead in leads:
+
+    emails.append(
+        lead["email"]
+    )
+
+    #its comprehension
+emails=[
+    lead["email"]
+    for lead in leads
+]
+#both are giving same results
+
+qualified_leads=[
+    lead["email"]
+    for lead in leads
+    id lead["score"]>=90
+]
+#generator expression
+#very common for metrics
+
+
+enterprise_count = 0
+smb_count = 0
+rejected_count = 0
+
+for lead in leads:
+
+    if not lead["gdpr_ok"]:
+
+        rejected_count += 1
+
+    elif lead["employees"] >= 500:
+
+        enterprise_count += 1
+
+    else:
+
+        smb_count += 1
+
 
 
 
